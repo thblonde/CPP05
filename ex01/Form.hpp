@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
 
 class Form {
     public:
@@ -15,6 +16,7 @@ class Form {
         int getGradeToSign() const;
         int getGradeToExecute() const;
 
+        void beSigned(Bureaucrat src);
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char* what() const throw() {
@@ -28,7 +30,7 @@ class Form {
                     return "Grade too low !";
                 }
         };
-        
+
     private:
         const std::string _name;
         bool _isSigned;

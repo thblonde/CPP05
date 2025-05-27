@@ -51,6 +51,10 @@ void Bureaucrat::decrementGrade() {
     std::cout << _name << " grade decrement." << std::endl;
 }
 
+void Bureaucrat::signForm() {
+    Form::beSigned(*this);
+}
+
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src) {
     out << src.getName();
     out << src.getGrade();
