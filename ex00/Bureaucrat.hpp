@@ -11,20 +11,26 @@ class Bureaucrat {
         Bureaucrat(const Bureaucrat& copy);
         Bureaucrat& operator=(const Bureaucrat& assign);
         ~Bureaucrat();
+
         std::string getName() const;
         int getGrade() const;
+        void incrementGrade();
+        void decrementGrade();
+
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char* what() const throw() {
                     return "Grade too high !";
                 }
         };
+
         class GradeTooLowException : public std::exception {
             public:
                 virtual const char* what() const throw() {
                     return "Grade too low !";
                 }
         };
+
     private:
         const std::string _name;
         int _grade;
