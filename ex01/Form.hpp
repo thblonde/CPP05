@@ -5,6 +5,8 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
     public:
         Form();
@@ -12,11 +14,13 @@ class Form {
         Form(const Form& copy);
         Form& operator=(const Form& assign);
         ~Form();
+
         std::string getName() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
 
         void beSigned(Bureaucrat src);
+        
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char* what() const throw() {

@@ -44,8 +44,10 @@ int Form::getGradeToExecute() const {
 }
 
 void Form::beSigned(Bureaucrat src) {
-    if (src.getGrade() <= _gradeToSign)
+    if (src.getGrade() <= getGradeToSign()) {
         _isSigned = true;
+        std::cout << "Bureaucrat " << src.getName() << " signed form " << _name << std::endl;
+    }
     else
         throw GradeTooLowException();
 }
