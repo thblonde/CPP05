@@ -1,9 +1,11 @@
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
 int main() {
     Bureaucrat b("b", 1);
-    ShrubberyCreationForm a("home");
+    RobotomyRequestForm a("home");
 
     try {
         b.signForm(a);
