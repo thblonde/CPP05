@@ -1,30 +1,22 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP 
-
 # include <fstream>
+# include <cstdlib>
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public AForm
+{
     public:
         ShrubberyCreationForm();
-        ShrubberyCreationForm(const ShrubberyCreationForm& copy); 
-        ShrubberyCreationForm(const std::string& target);
-        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& assign);
-        void beSigned(Bureaucrat& src);
-
-        void execute(Bureaucrat const & executor) const;
-
-        int getGradeToSign() const;
-        int getGradeToExecute() const;
-
+        ShrubberyCreationForm(ShrubberyCreationForm const & copy); 
+        ShrubberyCreationForm(std::string const & target);
+        ~ShrubberyCreationForm();
+        ShrubberyCreationForm& operator=(ShrubberyCreationForm const & assign);
+        
         void executeForm() const;
 
     private:
-        const std::string _target;
-        const std::string _name;
-        bool _isSigned;
-        const int _gradeToSign;
-        const int _gradeToExecute;
+        std::string const _target;
 };
 
 #endif

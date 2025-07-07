@@ -1,19 +1,19 @@
 #ifndef FORM_HPP
 # define FORM_HPP
-
 # include <iostream>
 # include <string>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form {
+class Form
+{
     public:
         Form();
-        Form(const std::string name, bool isSigned, const int gradeToSign, const int gradeToExecute);
-        Form(const Form& copy);
-        Form& operator=(const Form& assign);
+        Form(std::string const name, bool isSigned, int const gradeToSign, int const gradeToExecute);
+        Form(Form const & copy);
         ~Form();
+        Form& operator=(Form const & assign);
 
         std::string getName() const;
         int getGradeToSign() const;
@@ -21,27 +21,31 @@ class Form {
 
         void beSigned(Bureaucrat& src);
 
-        class GradeTooHighException : public std::exception {
+        class GradeTooHighException : public std::exception
+        {
             public:
-                virtual const char* what() const throw() {
+                virtual const char* what() const throw()
+                {
                     return "Grade too high !";
                 }
         };
 
-        class GradeTooLowException : public std::exception {
+        class GradeTooLowException : public std::exception
+        {
             public:
-                virtual const char* what() const throw() {
+                virtual const char* what() const throw()
+                {
                     return "Grade too low !";
                 }
         };
 
     private:
-        const std::string _name;
+        std::string const _name;
         bool _isSigned;
-        const int _gradeToSign;
-        const int _gradeToExecute;
+        int const _gradeToSign;
+        int const _gradeToExecute;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& src);
+std::ostream& operator<<(std::ostream& out, Form const & src);
 
 #endif

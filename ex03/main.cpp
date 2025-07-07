@@ -4,22 +4,56 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 
-int main() {
-    Bureaucrat a("a", 1);
+int main()
+{
+    Intern      intern;
+    Bureaucrat  bureaucrat1("A", 1);
+    std::cout << bureaucrat1.getName() << ", bureaucrat grade " << bureaucrat1.getGrade() << "." << std::endl;
+    AForm       *form1;
+    try
+    {
+        form1 = intern.makeForm("shrubbery creation", "home");
+        bureaucrat1.signForm(*form1);
+        bureaucrat1.executeForm(*form1);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    std::cout << std::endl;
 
-    Intern i;
-
-    AForm* f = i.makeForm("shrubery creation", "a");
-    if (!f) {
-        return 1;
+    AForm       *form2;
+    try
+    {
+        form2 = intern.makeForm("presidential pardon", "42");
+        bureaucrat1.signForm(*form2);
+        bureaucrat1.executeForm(*form2);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 
-    a.signForm(*f);
+    std::cout << std::endl;
 
-    try {
-        a.executeForm(*f);
+    AForm       *form3;
+    try
+    {
+        form3 = intern.makeForm("robotomy request", "Thomas");
+        bureaucrat1.signForm(*form3);
+        bureaucrat1.executeForm(*form3);
     }
-    catch (const std::exception& e) {
-        std::cout << e.what() << std::endl;
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
+
+    std::cout << std::endl;
+
+    delete form1;
+    delete form2;
+    delete form3;
+
+    return 0;
 }

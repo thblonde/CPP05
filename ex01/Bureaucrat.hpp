@@ -1,19 +1,19 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-
 # include <string>
 # include <iostream>
 # include "Form.hpp"
 
 class Form;
 
-class Bureaucrat {
+class Bureaucrat
+{
     public:
         Bureaucrat();
-        Bureaucrat(const std::string name, int grade);
-        Bureaucrat(const Bureaucrat& copy);
-        Bureaucrat& operator=(const Bureaucrat& assign);
+        Bureaucrat(std::string const name, int grade);
+        Bureaucrat(Bureaucrat const & copy);
         ~Bureaucrat();
+        Bureaucrat& operator=(Bureaucrat const & assign);
 
         std::string getName() const;
         int getGrade() const;
@@ -23,25 +23,29 @@ class Bureaucrat {
         
         void signForm(Form& src);
 
-        class GradeTooHighException : public std::exception {
+        class GradeTooHighException : public std::exception
+        {
             public:
-                virtual const char* what() const throw() {
+                virtual const char* what() const throw()
+                {
                     return "Grade too high !";
                 }
         };
 
-        class GradeTooLowException : public std::exception {
+        class GradeTooLowException : public std::exception
+        {
             public:
-                virtual const char* what() const throw() {
+                virtual const char* what() const throw()
+                {
                     return "Grade too low !";
                 }
         };
 
     private:
-        const std::string _name;
+        std::string const _name;
         int _grade;
 };
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat& src);
+std::ostream& operator<<(std::ostream& out,Bureaucrat const & src);
 
 #endif
