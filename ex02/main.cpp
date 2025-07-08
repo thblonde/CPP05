@@ -6,22 +6,26 @@
 int main()
 {
     Bureaucrat a("A", 1);
-    std::cout << a.getName() << ", bureaucrat grade " << a.getGrade() << "." << std::endl;
+    std::cout << a.getName() << ", bureaucrat grade " << a.getGrade() << "."
+        << std::endl;
 
     std::cout << std::endl;
 
     RobotomyRequestForm robot("home");
-    std::cout << robot.getName() << ", Form grade to be signed " << robot.getGradeToSign() << "." << std::endl;
+    std::cout << robot.getName() << ", Form grade to be signed "
+        << robot.getGradeToSign() << "." << std::endl;
 
     std::cout << std::endl;
 
     ShrubberyCreationForm   shrub("file");
-    std::cout << shrub.getName() << ", Form grade to be signed " << shrub.getGradeToSign() << "." << std::endl;
+    std::cout << shrub.getName() << ", Form grade to be signed "
+        << shrub.getGradeToSign() << "." << std::endl;
 
     std::cout << std::endl;
 
-    PresidentialPardonForm  pres("42");
-    std::cout << pres.getName() << ", Form grade to be signed " << pres.getGradeToSign() << "." << std::endl;
+    PresidentialPardonForm  president("42");
+    std::cout << president.getName() << ", Form grade to be signed "
+        << president.getGradeToSign() << "." << std::endl;
 
     std::cout << std::endl;
 
@@ -49,8 +53,8 @@ int main()
 
     try
     {
-        a.signForm(pres);
-        pres.execute(a);
+        a.signForm(president);
+        president.execute(a);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -58,5 +62,40 @@ int main()
 
     std::cout << std::endl;
 
+    Bureaucrat  b("B", 150);
+    std::cout << b.getName() << ", bureaucrat grade " << b.getGrade() << "."
+        << std::endl;
+
+    std::cout << std::endl;
+
+    try
+    {
+        b.signForm(president);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    std::cout << std::endl;
+
+    Bureaucrat  c("C", 72);
+    std::cout << c.getName() << ", bureaucrat grade " << c.getGrade() << "."
+        << std::endl;
+
+    std::cout << std::endl;
+
+    try
+    {
+        c.signForm(robot);
+        c.executeForm(robot);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    std::cout << std::endl;
+    
     return 0;
 }

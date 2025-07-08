@@ -1,7 +1,8 @@
 NAME = aform
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SRC = main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
+	PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)

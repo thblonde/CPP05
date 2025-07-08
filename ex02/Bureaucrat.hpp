@@ -13,6 +13,7 @@ class Bureaucrat
         Bureaucrat(std::string const name, int grade);
         Bureaucrat(Bureaucrat const & copy);
         ~Bureaucrat();
+        
         Bureaucrat& operator=(Bureaucrat const & assign);
 
         std::string getName() const;
