@@ -12,27 +12,30 @@ int main()
     std::cout << std::endl;
 
     RobotomyRequestForm robot("home");
-    std::cout << robot.getName() << ", Form grade to be signed "
-        << robot.getGradeToSign() << "." << std::endl;
+    std::cout << robot.getName() << ", Form grade to be signed: "
+        << robot.getGradeToSign() << ", grade to be executed: "
+        << robot.getGradeToExecute() << std::endl;
 
     std::cout << std::endl;
 
     ShrubberyCreationForm   shrub("file");
-    std::cout << shrub.getName() << ", Form grade to be signed "
-        << shrub.getGradeToSign() << "." << std::endl;
+    std::cout << shrub.getName() << ", Form grade to be signed: "
+        << shrub.getGradeToSign() << ", grade to be executed: "
+        << shrub.getGradeToExecute() << std::endl;
 
     std::cout << std::endl;
 
     PresidentialPardonForm  president("42");
-    std::cout << president.getName() << ", Form grade to be signed "
-        << president.getGradeToSign() << "." << std::endl;
+     std::cout << president.getName() << ", Form grade to be signed: "
+        << president.getGradeToSign() << ", grade to be executed: "
+        << president.getGradeToExecute() << std::endl;
 
     std::cout << std::endl;
 
     try
     {
         a.signForm(robot);
-        robot.execute(a);
+        a.executeForm(robot);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -43,7 +46,7 @@ int main()
     try
     {
         a.signForm(shrub);
-        shrub.execute(a);
+        a.executeForm(shrub);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -54,7 +57,7 @@ int main()
     try
     {
         a.signForm(president);
-        president.execute(a);
+        a.executeForm(president);
     }
     catch (const std::exception& e) {
         std::cout << e.what() << std::endl;
