@@ -10,9 +10,11 @@ class Form
 {
     public:
         Form();
-        Form(std::string const name, bool isSigned, int const gradeToSign, int const gradeToExecute);
+        Form(std::string const name, bool isSigned, int const gradeToSign,
+            int const gradeToExecute);
         Form(Form const & copy);
         ~Form();
+        
         Form& operator=(Form const & assign);
 
         std::string getName() const;
@@ -24,19 +26,13 @@ class Form
         class GradeTooHighException : public std::exception
         {
             public:
-                virtual const char* what() const throw()
-                {
-                    return "Grade too high !";
-                }
+                const char* what() const throw();
         };
 
         class GradeTooLowException : public std::exception
         {
             public:
-                virtual const char* what() const throw()
-                {
-                    return "Grade too low !";
-                }
+                const char* what() const throw();
         };
 
     private:

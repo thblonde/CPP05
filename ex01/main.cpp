@@ -3,14 +3,19 @@
 
 int main()
 {
-    Bureaucrat  a("BA", 100);
-    std::cout << a.getName() << ", bureaucrat grade " << a.getGrade() << "." << std::endl;
-    Form        fa("FA", false, 99, 99);
-    std::cout << fa.getName() << ", Form grade to be signed " << fa.getGradeToSign() << "." << std::endl;
+    Bureaucrat  b1("b1", 100);
+    std::cout << b1.getName() << ", bureaucrat grade " << b1.getGrade() << "."
+        << std::endl;
+    
+    std::cout << std::endl;
+
+    Form        f1("f1", false, 99, 99);
+    std::cout << f1.getName() << ", Form grade to be signed "
+        << f1.getGradeToSign() << "." << std::endl;
     
     try
     {
-        a.signForm(fa);
+        b1.signForm(f1);
     }
     catch(const std::exception& e)
     {
@@ -19,14 +24,19 @@ int main()
     
     std::cout << std::endl;
 
-    Bureaucrat  b("BA", 2);
-    std::cout << b.getName() << ", bureaucrat grade " << b.getGrade() << "." << std::endl;
-    Form        fb("FB", false, 1, 1);
-    std::cout << fb.getName() << ", Form grade to be signed " << fb.getGradeToSign() << "." << std::endl;
+    Bureaucrat  b2("b2", 2);
+    std::cout << b2.getName() << ", bureaucrat grade " << b2.getGrade()
+        << "." << std::endl;
+    
+    std::cout << std::endl;
+
+    Form        f2("f2", false, 1, 1);
+    std::cout << f2.getName() << ", Form grade to be signed "
+        << f2.getGradeToSign() << "." << std::endl;
     
     try
     {
-        b.signForm(fb);
+        b2.signForm(f2);
     }
     catch(const std::exception& e)
     {
@@ -35,11 +45,16 @@ int main()
 
     std::cout << std::endl;
 
-    b.incrementGrade();
+    b2.incrementGrade();
+    
+    std::cout << std::endl;
+
+    std::cout << b2.getName() << ", bureaucrat grade " << b2.getGrade()
+        << "." << std::endl;
     
     try
     {
-        b.signForm(fb);
+        b2.signForm(f2);
     }
     catch(const std::exception& e)
     {
