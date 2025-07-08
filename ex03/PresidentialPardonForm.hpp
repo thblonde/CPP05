@@ -10,6 +10,7 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm(PresidentialPardonForm const & copy); 
         PresidentialPardonForm(std::string const & target);
         ~PresidentialPardonForm();
+        
         PresidentialPardonForm& operator=(PresidentialPardonForm const & assign);
 
         void executeForm() const;
