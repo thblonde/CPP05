@@ -7,8 +7,15 @@
 int main()
 {
     Intern      intern;
+
+    std::cout << std::endl;
+
     Bureaucrat  bureaucrat1("A", 1);
-    std::cout << bureaucrat1.getName() << ", bureaucrat grade " << bureaucrat1.getGrade() << "." << std::endl;
+    std::cout << bureaucrat1.getName() << ", bureaucrat grade "
+        << bureaucrat1.getGrade() << "." << std::endl;
+    
+    std::cout << std::endl;
+
     AForm       *form1;
     try
     {
