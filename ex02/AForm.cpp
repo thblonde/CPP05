@@ -72,7 +72,11 @@ void AForm::beSigned(Bureaucrat& src)
 void AForm::execute(Bureaucrat const & executor) const
 {
     if (this->_isSigned == true && executor.getGrade() <= this->_gradeToExecute)
+    {
+         std::cout << "Bureaucrat " << executor.getName() << " executed form "
+            << this->_name << std::endl;
         this->executeForm();
+    }
     else
     {
         std::cout << "Bureaucrat " << executor.getName() << " couldn't execute form "
