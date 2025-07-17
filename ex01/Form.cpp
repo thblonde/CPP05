@@ -72,9 +72,8 @@ void Form::beSigned(Bureaucrat& src)
 
 std::ostream& operator<<(std::ostream& out, Form const & src)
 {
-    out << src.getName();
-    out << src.getGradeToSign();
-    out << src.getGradeToExecute();
+    out << src.getName() << ", " << src.getGradeToSign() << " to be signed, "
+        << src.getGradeToExecute() << " to be exectued.";
     return out;
 }
 

@@ -4,14 +4,12 @@
 int main()
 {
     Bureaucrat  b1("b1", 100);
-    std::cout << b1.getName() << ", bureaucrat grade " << b1.getGrade() << "."
-        << std::endl;
+    std::cout << b1 << std::endl;
     
     std::cout << std::endl;
 
     Form        f1("f1", false, 99, 99);
-    std::cout << f1.getName() << ", Form grade to be signed "
-        << f1.getGradeToSign() << "." << std::endl;
+    std::cout << f1 << std::endl;
     
     try
     {
@@ -25,14 +23,12 @@ int main()
     std::cout << std::endl;
 
     Bureaucrat  b2("b2", 2);
-    std::cout << b2.getName() << ", bureaucrat grade " << b2.getGrade()
-        << "." << std::endl;
+    std::cout << b2 << std::endl;
     
     std::cout << std::endl;
 
     Form        f2("f2", false, 1, 1);
-    std::cout << f2.getName() << ", Form grade to be signed "
-        << f2.getGradeToSign() << "." << std::endl;
+    std::cout << f2 << std::endl;
     
     try
     {
@@ -49,8 +45,7 @@ int main()
     
     std::cout << std::endl;
 
-    std::cout << b2.getName() << ", bureaucrat grade " << b2.getGrade()
-        << "." << std::endl;
+    std::cout << b2 << std::endl;
     
     try
     {

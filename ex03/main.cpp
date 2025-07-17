@@ -11,8 +11,7 @@ int main()
     std::cout << std::endl;
 
     Bureaucrat  bureaucrat1("A", 1);
-    std::cout << bureaucrat1.getName() << ", bureaucrat grade "
-        << bureaucrat1.getGrade() << "." << std::endl;
+    std::cout << bureaucrat1 << std::endl;
     
     std::cout << std::endl;
 

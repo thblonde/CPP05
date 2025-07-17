@@ -6,8 +6,7 @@
 int main()
 {
     Bureaucrat a("A", 1);
-    std::cout << a.getName() << ", bureaucrat grade " << a.getGrade() << "."
-        << std::endl;
+    std::cout << a << std::endl;
 
     std::cout << std::endl;
 
@@ -66,8 +65,7 @@ int main()
     std::cout << std::endl;
 
     Bureaucrat  b("B", 150);
-    std::cout << b.getName() << ", bureaucrat grade " << b.getGrade() << "."
-        << std::endl;
+    std::cout << b << std::endl;
 
     std::cout << std::endl;
 
@@ -83,8 +81,7 @@ int main()
     std::cout << std::endl;
 
     Bureaucrat  c("C", 72);
-    std::cout << c.getName() << ", bureaucrat grade " << c.getGrade() << "."
-        << std::endl;
+    std::cout << c << std::endl;
 
     std::cout << std::endl;
 
